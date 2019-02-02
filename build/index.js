@@ -6,18 +6,28 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _jsonp = require('jsonp');
+
+var _jsonp2 = _interopRequireDefault(_jsonp);
+
+var _qs = require('qs');
+
+var _qs2 = _interopRequireDefault(_qs);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var React = require('react');
-var jsonp = require('jsonp');
-var qs = require('qs');
-
-var SoundCloudEmbed = exports.SoundCloudEmbed = function (_React$Component) {
-  _inherits(SoundCloudEmbed, _React$Component);
+var SoundCloudEmbed = function (_Component) {
+  _inherits(SoundCloudEmbed, _Component);
 
   function SoundCloudEmbed(props) {
     _classCallCheck(this, SoundCloudEmbed);
@@ -56,7 +66,7 @@ var SoundCloudEmbed = exports.SoundCloudEmbed = function (_React$Component) {
     key: 'fetchEmbed',
     value: function fetchEmbed(queryParams) {
       var payload = new Promise(function (resolve, reject) {
-        jsonp('https://soundcloud.com/oembed?' + queryParams, null, function (err, data) {
+        (0, _jsonp2.default)('https://soundcloud.com/oembed?' + queryParams, null, function (err, data) {
           if (err) {
             reject(err.message);
           } else {
@@ -72,7 +82,7 @@ var SoundCloudEmbed = exports.SoundCloudEmbed = function (_React$Component) {
     value: function getQueryParams(_ref) {
       var url = _ref.url;
 
-      return qs.stringify({
+      return _qs2.default.stringify({
         url: url,
         format: 'js'
       });
@@ -90,9 +100,11 @@ var SoundCloudEmbed = exports.SoundCloudEmbed = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      return React.createElement('div', { dangerouslySetInnerHTML: { __html: this.state.__html } });
+      return _react2.default.createElement('div', { dangerouslySetInnerHTML: { __html: this.state.__html } });
     }
   }]);
 
   return SoundCloudEmbed;
-}(React.Component);
+}(_react.Component);
+
+exports.default = SoundCloudEmbed;

@@ -1,8 +1,8 @@
-const React = require('react')
-const jsonp = require('jsonp');
-const qs = require('qs');
+import React, { Component } from 'react';
+import jsonp from 'jsonp';
+import qs from 'qs';
 
-export class SoundCloudEmbed extends React.Component {
+class SoundCloudEmbed extends Component {
     constructor(props) {
       super(props);
   
@@ -65,3 +65,5 @@ export class SoundCloudEmbed extends React.Component {
       return <div dangerouslySetInnerHTML={{ __html: this.state.__html }} />;
     }
 }
+
+export default SoundCloudEmbed;
