@@ -8,7 +8,7 @@ npm i --save react-soundcloud-component
 
 ## How to include
 ```javascript
-const { SoundCloudEmbed } = require('react-soundcloud-component');
+import SoundCloudEmbed from './SoundCloudEmbed';;
 ```
 
 ## How to use
