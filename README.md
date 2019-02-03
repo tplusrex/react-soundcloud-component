@@ -19,6 +19,8 @@ import SoundCloudEmbed from './SoundCloudEmbed';;
 <SoundCloudEmbed url="https://soundcloud.com/pinkworldpromo/trillk-coogi" height="300" width="300" />
 ```
 
+## Props
+
 Props  | Description
 ------ | -----
 url | soundcloud url for a track, playlist, user
