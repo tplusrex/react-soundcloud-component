@@ -46,10 +46,12 @@ class SoundCloudEmbed extends Component {
       payload.then(this.handleFetchSuccess).catch(this.handleFetchFailure);
     }
   
-    getQueryParams({ url }) {
+    getQueryParams({ url, height, width }) {
       return qs.stringify({
         url,
-        format: 'js'
+        format: 'js',
+        maxheight: height,
+        maxwidth: width
       });
     }
   

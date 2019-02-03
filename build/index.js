@@ -80,11 +80,15 @@ var SoundCloudEmbed = function (_Component) {
   }, {
     key: 'getQueryParams',
     value: function getQueryParams(_ref) {
-      var url = _ref.url;
+      var url = _ref.url,
+          height = _ref.height,
+          width = _ref.width;
 
       return _qs2.default.stringify({
         url: url,
-        format: 'js'
+        format: 'js',
+        maxheight: height,
+        maxwidth: width
       });
     }
   }, {
