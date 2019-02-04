@@ -29,4 +29,4 @@ width | width of embed object
 
 ## Examples
 
-https://tplusrex.github.io/react-practice/
+https://tplusrex.github.io/react-soundcloud-component/
